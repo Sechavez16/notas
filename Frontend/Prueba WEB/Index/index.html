@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <h1>Bienvenido</h1>
+    <div id="cont-AgregarEditar">
+        <div id="formularios">
+            <div id="div-agregarNotas">
+                <form id="formulario-nota">
+                    <h2>Agregar Nota con Categoría</h2>
+                    <label for="tituloNota">Agregar Título:</label>
+                    <input type="text" name="tituloNota" id="tituloNota"><br><br>
+                    <label for="contenidoNota">Agregar Contenido</label>
+                    <input name="contenidoNota" id="contenidoNota"></input><br><br>
+                    <label for="categoria">Elija la categoría</label>
+                    <select id="categoria"></select><br>
+                    <button id="button" type="button" onclick="agregarNota()">Agregar Nota</button>
+                </form>
+            </div>
+            <div id="div-editarNota">
+                <form id="formulario-Editarnota">
+                    <h2>Editar Nota</h2>
+                    <label for="notas">Elija la Nota a Editar</label>
+                    <select id="notas"></select><br><br>
+                    <label for="tituloNotaEditar">Título Nota</label>
+                    <input type="text" id="tituloNotaEditar" name="tituloNotaEditar"><br><br>
+                    <label for="contenidoNotaEditar">Contenido Nota Editar</label>
+                    <input type="text" id="contenidoNotaEditar" name="contenidoNotaEditar"><br><br>
+                    <label for="categoria">Elija la categoría</label>
+                    <select id="categoriaEditar"></select><br>
+                    <button id="button" onclick="editarNota(event)">Editar Nota</button>
+                </form>
+            </div>
+            <div id="div-agregarCategoria">
+                <form id="formulario-categoria">
+                    <h2>Agregar Categoría</h2>
+                    <label for="nombreCategoria">Nombre de la Categoría:</label>
+                    <input type="text" name="nombreCategoria" id="nombreCategoria"><br><br>
+                    <button id="button" type="button" onclick="agregarCategoria(event)">Agregar Categoría</button>
+                </form>
+            </div>
+        </div>
+        <div id="buscador">
+            <form form="buscar">
+                <p>Filtrar Notas</p>
+                <input type="text" class="buscarNota" id="buscarNota" oninput="mostrarNotas()"
+                    placeholder="Filtrar Notas"><br><br>
+                <input type="checkbox" id="chkArchivadas" onchange="mostrarNotas()">
+                <label for="chkArchivadas">Mostrar notas archivadas</label><br><br>
+                <div id="listNotas"></div>
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+
+    <style>
+        /* Estilos para el modal */
+        .modal-content {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 400px;
+            /* Ajusta el ancho máximo según tus necesidades */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0 auto;
+            /* Centra horizontalmente */
+        }
+
+        /* Resto del CSS sigue igual */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Contenido del modal -->
+    <div class="modal-content">
+        <form onsubmit="guardarNota(); return false;">
+            <span class="close" onclick="cerrarFormulario()">&times;</span>
+            <label for="titulo">Título:</label><br>
+            <input type="text" id="titulo"><br>
+            <label for="contenido">Contenido:</label><br>
+            <textarea id="contenido"></textarea><br>
+            <label for="categoria">Elija la categoria</label>
+            <select id="categoria"></select><br>
+            <button type="submit" id="guardarNota">Guardar Nota</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
